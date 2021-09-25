@@ -21,7 +21,7 @@ namespace {$0
 			return y_combinator_result<decay_t<Fun>>(forward<Fun>(fun));
 		}
 	private:
-		#define Rec Recurser() << 
+		#define Recur Recurser() << 
 	};
 } // Y combinator
 ]]></content>
