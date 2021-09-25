@@ -1,0 +1,15 @@
+<snippet>
+	<content><![CDATA[
+struct custom_hash {$0
+	static uint64_t _splitmix64_(uint64_t x) {
+		x += 0x9e3779b97f4a7c15; x = (x ^ (x >> 30)) * 0xbf58476d1ce4e5b9;
+		x = (x ^ (x >> 27)) * 0x94d049bb133111eb; return x ^ (x >> 31);
+	}
+	size_t operator()(uint64_t x) const { return _splitmix64_(x + FIXED_RANDOM); }
+};
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>custom_hash</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

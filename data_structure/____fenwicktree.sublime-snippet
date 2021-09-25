@@ -1,0 +1,35 @@
+<snippet>
+	<content><![CDATA[
+template<class T>
+class fenwick_tree {$0
+private:
+	int n;
+	vector<T> data;
+	T sum(int r) {
+		T s = 0;
+		while (r > 0) {
+			s += data[r - 1];
+			r -= r & -r;
+		}
+		return s;
+	}
+public:
+	fenwick_tree(int n) : n(n), data(n) {}
+	void add(int p, T x) {
+		assert(0 <= p && p < n);
+		for (p++; p <= n; ) {
+			data[p - 1] += x;
+			p += p & -p;
+		}
+	}
+	T sum(int l, int r) {
+		assert(0 <= l && l <= r && r <= n);
+		return sum(r) - sum(l);
+	}
+};
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>fenwicktree</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

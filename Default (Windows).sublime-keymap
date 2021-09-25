@@ -1,0 +1,20 @@
+[
+	{
+		"keys": ["f5"], 
+		"command": "chain", 
+		"args": {
+			"commands": [
+				["select_all"],
+				["left_delete"],
+				["insert_date_one"],
+				["expand_selection", {"to": "brackets"}],
+				["fold"],
+				["save", {"async": true}]
+			]
+		}
+	},
+	{
+		"keys": ["ctrl+shift+c"],
+		"command": "cmd"
+	}
+]

@@ -1,0 +1,30 @@
+<snippet>
+	<content><![CDATA[
+#include <bits/stdc++.h>
+using namespace std;
+
+#define all(a)  (a).begin(),  (a).end()
+#define rall(a) (a).rbegin(), (a).rend()
+#define For(i, a, b) for (int i = a; i < b; i++)
+#define Rof(i, a, b) for (int i = a; --i >= b; )
+
+using str = string;            using ll  = long long;         
+using pii = pair<int, int>;    using pll = pair<ll, ll>;
+
+const ll md  = 1e9 + 7;
+const ll e30 = 1ll << 30;
+const ll e60 = 1ll << 60;
+
+
+
+/* -----------------[ MAIN CODE GOES HERE ]----------------- */
+int main() {
+	cin.tie(nullptr) -> sync_with_stdio(false);
+	$0
+}
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>cppT</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
