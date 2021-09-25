@@ -1,10 +1,8 @@
 // C++ Template Code is tested for compability with: C++11 or above
 // Repo: https://github.com/KozerG17/ST4-Snippets/blob/main/cpp.cpp
 
-#ifdef LBM_LOCAL
-#include <local.h>
-#else
 #include <bits/stdc++.h>
+#ifndef LBM_LOCAL
 #define debug(x...) 17
 #endif
 
