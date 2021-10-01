@@ -6,7 +6,7 @@
 			"commands": [
 				["select_all"],
 				["left_delete"],
-				["insert_date_one"],
+				["insert_templ"],
 				["expand_selection", {"to": "brackets"}],
 				["fold"],
 				["save", {"async": true}]
