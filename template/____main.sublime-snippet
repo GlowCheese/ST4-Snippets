@@ -34,9 +34,9 @@ namespace {$0
 	ll Rand(ll a, ll b) { return uniform_int_distribution<ll>(a, b)(Rng); }
 
 	// constants
-	constexpr ld  pi  = acos(-1),   eps = 1e-7;
-	constexpr ll  e30 = 1ll << 30,  e60 = 1ll << 60;
-	constexpr ll  md  = 1e9 + 7,    _md = 1e9 + 1617;
+	constexpr ld  pi  = acos(-1),      eps = 1e-7;
+	constexpr ll  md  = 1e9 + 1617,    mod = 1e9 + 7;
+	constexpr ll  e30 = 1ll << 30,     e60 = 1ll << 60;
 
 	// devices
 	class Reader {
