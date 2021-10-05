@@ -25,7 +25,7 @@ namespace {$0
 } // adding math functions
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>MathNS</tabTrigger>
+	<tabTrigger>mathNS</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<!-- <scope>source.python</scope> -->
 </snippet>
