@@ -16,5 +16,15 @@
 	{
 		"keys": ["ctrl+shift+c"],
 		"command": "cmd"
+	},
+	{
+		"keys": ["ctrl+alt+t"],
+		"command": "chain",
+		"args": {
+			"commands": [
+				["unexpand_tabs", {"set_translate_tabs": true}],
+				["save", {"async": true}]
+			]
+		}
 	}
 ]
