@@ -34,6 +34,7 @@ namespace {$0
 	template<class A, class B> bool Minz(A &a, B b) { return b < a && (a = b, true); }
 
 	// constants
+	constexpr ld  pi  = acos(-1),      eps = 1e-7;
 	constexpr ll  md  = 1e9 + 1617,    mod = 1e9 + 7;
 	constexpr ll  e30 = 1ll << 30,     e60 = 1ll << 60;
 
