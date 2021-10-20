@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-namespace {
+namespace {$0
 	using ll = long long;
 	mt19937_64 Rng(chrono::steady_clock::now().time_since_epoch().count());
 	static const ll FIXED_RANDOM = Rng();
