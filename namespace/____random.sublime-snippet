@@ -1,7 +1,9 @@
 <snippet>
 	<content><![CDATA[
 namespace {
+	using ll = long long;
 	mt19937_64 Rng(chrono::steady_clock::now().time_since_epoch().count());
+	static const ll FIXED_RANDOM = Rng();
 	ll Rand(ll a, ll b) { return uniform_int_distribution<ll>(a, b)(Rng); }
 } // random number generators
 ]]></content>
