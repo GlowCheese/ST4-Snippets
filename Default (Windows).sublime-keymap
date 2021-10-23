@@ -6,9 +6,21 @@
 			"commands": [
 				["select_all"],
 				["left_delete"],
-				["insert_templ"],
+				["insert_templ_one"],
 				["expand_selection", {"to": "brackets"}],
 				["fold"],
+				["save", {"async": true}]
+			]
+		}
+	},
+	{
+		"keys": ["f6"], 
+		"command": "chain", 
+		"args": {
+			"commands": [
+				["select_all"],
+				["left_delete"],
+				["insert_templ_two"],
 				["save", {"async": true}]
 			]
 		}

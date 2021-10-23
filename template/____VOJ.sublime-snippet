@@ -1,14 +1,21 @@
 <snippet>
 	<content><![CDATA[
+/**
+ *    author:  Dao Le Bao Minh
+ *    created: $DATE  
+**/
+
 #include <bits/stdc++.h>
-using namespace std;
+#ifndef LBM_LOCAL
+#define debug(x...) 17
+#endif
 
 #define all(a)  (a).begin(),  (a).end()
-#define rall(a) (a).rbegin(), (a).rend()
 #define For(i, a, b) for (int i = a; i < b; i++)
 #define Rof(i, a, b) for (int i = a; --i >= b; )
 
-using str = string;            using ll  = long long;         
+using namespace std;           using ll  = long long;
+using str = string;            using ld  = long double;
 using pii = pair<int, int>;    using pll = pair<ll, ll>;
 
 const ll mod = 1e9 + 7;
@@ -20,7 +27,7 @@ const ll e60 = 1ll << 60;
 /* -----------------[ MAIN CODE GOES HERE ]----------------- */
 int main() {
 	cin.tie(nullptr) -> sync_with_stdio(false);
-	$0
+	
 }
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
