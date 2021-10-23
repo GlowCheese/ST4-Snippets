@@ -21,6 +21,7 @@
 				["select_all"],
 				["left_delete"],
 				["insert_templ_two"],
+				["show_at_center"],
 				["save", {"async": true}]
 			]
 		}

@@ -27,7 +27,7 @@ const ll e60 = 1ll << 60;
 /* -----------------[ MAIN CODE GOES HERE ]----------------- */
 int main() {
 	cin.tie(nullptr) -> sync_with_stdio(false);
-	
+	$0
 }
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
