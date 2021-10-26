@@ -8,6 +8,11 @@
 #define debug(x...) 17
 #endif
 
+// /* 
+#define fi first
+#define se second
+// */
+
 #define all(a) (a).begin(), (a).end()
 #define For(i, a, b) for (int i = a; i < b; i++)
 #define Rof(i, a, b) for (int i = a; --i >= b; )
