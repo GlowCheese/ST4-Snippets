@@ -6,7 +6,7 @@
 #endif
 
 using namespace std;
-namespace {
+namespace {$0
 	// macros definitions
 	#define Gint Read<ll>()
 	#define Gstr Read<str>()
