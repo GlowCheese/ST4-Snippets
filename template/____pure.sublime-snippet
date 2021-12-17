@@ -4,11 +4,7 @@
 using namespace std;
 
 int main() {
-	// freopen("m.INP", "r", stdin);
-	// freopen("m.OUT", "w", stdout);
-	cin.tie(nullptr) -> sync_with_stdio(false);
 
-	// do something
 }
 ]]></content>
 	<tabTrigger>cppT</tabTrigger>
