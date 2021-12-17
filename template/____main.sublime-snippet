@@ -5,11 +5,6 @@
 #define debug(x...) 17
 #endif
 
-#include <bits/stdc++.h>
-#ifndef LBM_LOCAL
-#define debug(x...) 17
-#endif
-
 using namespace std;
 namespace {
 	// macros definitions
