@@ -1,0 +1,35 @@
+<snippet>
+	<content><![CDATA[
+namespace {$0
+	template<const int mod> struct Mint {
+		int value; static_assert(mod > 0, "mod is negative");
+
+		Mint(int _value = 0) : value(_value) {}
+		Mint(int64_t _value) : value(_value % mod) {
+			if (value < 0) value += mod; }
+		explicit operator int() const { return value; }
+
+		friend ostream &operator<<(ostream &out,
+			const Mint &a) { return out << a.value; }
+		friend istream &operator>>(istream &in,
+			Mint &a) { ll v; cin >> v; return a = v, in; }
+		
+		friend Mint operator+(const Mint &a, const Mint &b) {
+			int ans = a.value + b.value;
+			return ans -= mod * (ans >= mod); }
+		friend Mint operator-(const Mint &a, const Mint &b) {
+			int ans = a.value - b.value;
+			return ans += mod * (ans < 0); }
+		friend Mint operator*(const Mint &a, const Mint &b) {
+			return 1ll * a.value * b.value; }
+		friend Mint operator/(const Mint &a, const Mint &b) {
+			return Minv(b.value, mod) * a.value; }
+	};
+	using mint = Mint<mod>;
+} // modint data structure
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>modintDS</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
