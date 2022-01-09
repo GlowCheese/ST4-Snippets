@@ -1,10 +1,6 @@
 <snippet>
 	<content><![CDATA[
 namespace {$0
-	using pld = pair<ld, ld>;
-	#define x first
-	#define y second
-
 	struct Point {
 		ld x, y;
 		Point(ld x = 0, ld y = 0) : x(x), y(y) {}
