@@ -1,5 +1,5 @@
 /**
- *    author:  Dao Le Bao Minh
+ *    author:  Ngo Bao Nhu
  *    created: $%D%$.$%M%$.$%Y%$ $%h%$:$%m%$:$%s%$       
 **/
 
@@ -23,6 +23,6 @@ const ll e30 = 1ll << 30,      e60 = 1ll << 60;
 
 /* -----------------[ MAIN CODE GOES HERE ]----------------- */
 int main() {
-    cin.tie(nullptr) -> sync_with_stdio(false);
-    
+	cin.tie(nullptr) -> sync_with_stdio(false);
+	
 }

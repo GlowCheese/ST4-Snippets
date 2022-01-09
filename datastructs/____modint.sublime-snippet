@@ -1,11 +1,12 @@
 <snippet>
 	<content><![CDATA[
 template<const int mod> struct Mint {$0
-	int value; static_assert(mod > 0, "mod is negative");
+	int value; static_assert(mod > 0);
 
-	Mint(int _value = 0) : value(_value) {}
+	Mint(int _value = 0) : Mint(1ll * _value) {}
 	Mint(int64_t _value) : value(_value % mod) {
 		if (value < 0) value += mod; }
+	Mint operator-() const { return -value; } 
 	explicit operator int() const { return value; }
 
 	friend ostream &operator<<(ostream &out,
@@ -26,7 +27,7 @@ template<const int mod> struct Mint {$0
 };
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>modintDS</tabTrigger>
+	<tabTrigger>modint</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<!-- <scope>source.python</scope> -->
 </snippet>
