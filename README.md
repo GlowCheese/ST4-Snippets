@@ -1,2 +1,2 @@
 # ST4 Snippets
-Contributed by _dlbm17
+Contributed by _dlbm17.
