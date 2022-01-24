@@ -1,25 +1,28 @@
 <snippet>
 	<content><![CDATA[
 namespace {$0
-	int64_t Pow(int64_t a, int64_t b, const int64_t &m) {
-		int64_t res = 1;
+	using ll = long long;
+
+	ll Pow(ll a, ll b, ll m = LLONG_MAX) {
+		ll res = 1; assert(b >= 0);
 		for (; b; b >>= 1, a = a * a % m)
 			if (b & 1) res = res * a % m;
 		return res;
 	}
-	template<class T> T Pow(T a, int64_t b) {
-		T res = a; if (!b--) return 1ll;
+
+	template<class T> T Pow(T a, ll b) {
+		T res = a; assert(--b >= 0);
 		for (; b; b >>= 1, a = a * a)
 			if (b & 1) res = res * a;
 		return res;
 	}
-	int64_t Minv(int64_t a, const int64_t &m) {
+
+	ll Minv(ll a, const ll &m) {
 		if (a %= m; a < 0) a += m;
-		int x = a, y = m, u = 1, v = 0;
-		while (x != 0) {
-			swap(u, v -= y / x * u);
-			swap(x, y -= y / x * x);
-		}
+		int y = m, u = 1, v = 0;
+		for (int x = a; x != 0; )
+			swap(u, v -= y/x * u),
+			swap(x, y -= y/x * x);
 		return v < 0 ? v + m : v;
 	}
 } // adding math functions

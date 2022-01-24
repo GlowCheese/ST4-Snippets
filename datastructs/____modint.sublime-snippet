@@ -3,8 +3,7 @@
 template<const int mod> struct Mint {$0
 	int value; static_assert(mod > 0);
 
-	Mint(int _value = 0) : Mint(1ll * _value) {}
-	Mint(int64_t _value) : value(_value % mod) {
+	Mint(int64_t value = 0) : value(value % mod) {
 		if (value < 0) value += mod; }
 	Mint operator-() const { return -value; } 
 	explicit operator int() const { return value; }
