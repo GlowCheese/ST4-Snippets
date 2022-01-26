@@ -3,14 +3,14 @@
 namespace {$0
 	using ll = long long;
 
-	ll Pow(ll a, ll b, ll m = LLONG_MAX) {
+	ll Pow1(ll a, ll b, ll m = LLONG_MAX) {
 		ll res = 1; assert(b >= 0);
 		for (; b; b >>= 1, a = a * a % m)
 			if (b & 1) res = res * a % m;
 		return res;
 	}
 
-	template<class T> T Pow(T a, ll b) {
+	template<class T> T Pow2(T a, ll b) {
 		T res = a; assert(--b >= 0);
 		for (; b; b >>= 1, a = a * a)
 			if (b & 1) res = res * a;
