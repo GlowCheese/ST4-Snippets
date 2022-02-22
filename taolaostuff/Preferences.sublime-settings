@@ -1,0 +1,29 @@
+{
+	"ignored_packages":
+	[
+		"A File Icon",
+		"Vintage",
+	],
+	"color_scheme": "Packages/One Half Color Schemes/OneHalfLight.tmTheme",
+	"theme": "One.sublime-theme",
+
+	"font_face": "DM Mono Light",
+	"highlight_line": true,
+
+	"always_show_minimap_viewport": true,
+
+	"caret_extra_bottom": 4,
+	"caret_extra_top": 4,
+
+	"enable_tab_scrolling": false,
+
+	"indent_guide_options": [
+		"draw_normal",
+		"solid"
+	],
+
+	"line_padding_bottom": 2,
+	"line_padding_top": 1,
+	"hide_tab_scrolling_buttons": true,
+	"font_size": 10,
+}
