@@ -16,9 +16,6 @@ using namespace std;           using ll  = long long;
 using str = string;            using ld  = long double;
 using pii = pair<int, int>;    using pll = pair<ll, ll>;
 
-const ll mod = 1e9 + 7,        luv = 17 * 83;
-const ll e30 = 1ll << 30,      e60 = 1ll << 60;
-
 
 
 /* -----------------[ MAIN CODE GOES HERE ]----------------- */
