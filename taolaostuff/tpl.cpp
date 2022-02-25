@@ -12,9 +12,9 @@
 #define For(i, a, b) for (int i = a; i < b; i++)
 #define Rof(i, a, b) for (int i = a; --i >= b; )
 
-using namespace std;           using ll  = long long;
-using str = string;            using ld  = long double;
-using pii = pair<int, int>;    using pll = pair<ll, ll>;
+using ll = long long;    using ld = long double;
+using namespace std;    using pll = pair<ll, ll>;
+using str = string;    using pii = pair<int, int>;
 
 
 
