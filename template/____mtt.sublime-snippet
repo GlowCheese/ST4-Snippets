@@ -38,10 +38,16 @@ namespace {$0
 /* -----------------[ MAIN CODE GOES HERE ]----------------- */
 const int mod = 1000000007;
 
+ostream &submain(int tc) {
+	
+	
+	return cout << "\n";
+}
+
 int main() {
 	cin.tie(nullptr) -> sync_with_stdio(false);
 	
-	
+	For (tc, 0, Gint) submain(tc);
 }
 
 // ------------------------------------------                    |\__/,|   (`\

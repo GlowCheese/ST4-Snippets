@@ -1,5 +1,28 @@
 [
 	{
+		"keys": ["f4"],
+		"command": "chain",
+		"args": {
+			"commands": [
+				["select_all"],
+				["left_delete"],
+				["insert_templ_three"],
+				["expand_selection", {"to": "brackets"}],
+				["fold"],
+				["move", {"by": "lines", "forward": true}],
+				["move", {"by": "lines", "forward": true}],
+				["move", {"by": "lines", "forward": true}],
+				["move", {"by": "lines", "forward": true}],
+				["move", {"by": "lines", "forward": true}],
+				["move", {"by": "lines", "forward": true}],
+				["move", {"by": "lines", "forward": true}],
+				["move", {"by": "lines", "forward": true}],
+				["move", {"by": "characters", "forward": true}],
+				["save", {"async": true}],
+			]
+		}
+	},
+	{
 		"keys": ["f5"], 
 		"command": "chain", 
 		"args": {
@@ -9,7 +32,18 @@
 				["insert_templ_one"],
 				["expand_selection", {"to": "brackets"}],
 				["fold"],
-				["save", {"async": true}]
+				["move", {"by": "lines", "forward": true}],
+				["move", {"by": "lines", "forward": true}],
+				["move", {"by": "lines", "forward": true}],
+				["move", {"by": "lines", "forward": true}],
+				["move", {"by": "lines", "forward": true}],
+				["move", {"by": "lines", "forward": true}],
+				["move", {"by": "lines", "forward": true}],
+				["move", {"by": "lines", "forward": true}],
+				["move", {"by": "lines", "forward": true}],
+				["move", {"by": "lines", "forward": true}],
+				["move", {"by": "characters", "forward": true}],
+				["save", {"async": true}],
 			]
 		}
 	},
@@ -22,13 +56,13 @@
 				["left_delete"],
 				["insert_templ_two"],
 				["show_at_center"],
-				["save", {"async": true}]
+				["save", {"async": true}],
 			]
 		}
 	},
 	{
 		"keys": ["ctrl+shift+c"],
-		"command": "cmd"
+		"command": "cmd",
 	},
 	{
 		"keys": ["ctrl+alt+t"],
@@ -36,7 +70,7 @@
 		"args": {
 			"commands": [
 				["unexpand_tabs", {"set_translate_tabs": true}],
-				["save", {"async": true}]
+				["save", {"async": true}],
 			]
 		}
 	}
