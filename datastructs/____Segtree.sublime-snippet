@@ -1,0 +1,73 @@
+<snippet>
+	<content><![CDATA[
+template<class node> struct Segtree {$0
+	int N, H; node *d, *t;
+	Segtree(int n) : N(n) {
+		d = new node[N];
+		t = new node[2*N];
+		H = 32 - __builtin_clz(2*N);
+	}
+
+	void apply(int u, node val) {
+		t[u] += val;
+		if (u < N) d[u] += val;
+	}
+
+	void refresh(int u) {
+		Rof (j, H, 1) {
+			int i = u >> j;
+			apply(i<<1, d[i]);
+			apply(i<<1|1, d[i]);
+			d[i] = 0;
+		}
+	}
+
+	void build(int u) {
+		for (; u >>= 1; t[u] += d[u]) {
+			int u1 = u<<1, u2 = u1|1;
+			t[u] = max(t[u1], t[u2]);
+		}
+	}
+
+	void asg(int idx, node val) {
+		refresh(idx + N);
+		t[idx + N] = val;
+		build(idx + N);
+	}
+
+	void inc(int l, int r, node val) {
+		int _l = l, _r = r;
+
+		for (l += N, r += N + 1; l < r; ) {
+			if (l&1) apply(l++, val);
+			if (r&1) apply(--r, val);
+			l >>= 1; r >>= 1;
+		}
+
+		build(_l + N); build(_r + N);
+	}
+
+	node get(int idx) {
+		refresh(idx + N);
+		return t[idx + N];
+	}
+
+	node get(int l, int r) {
+		refresh(l + N); refresh(r + N);
+
+		node ans = INT_MIN;
+		for (l += N, r += N + 1; l < r; ) {
+			if (l&1) Maxz(ans, t[l++]);
+			if (r&1) Maxz(ans, t[--r]);
+			l >>= 1; r >>= 1;
+		}
+
+		return ans;
+	}
+};
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>Segtree</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>
