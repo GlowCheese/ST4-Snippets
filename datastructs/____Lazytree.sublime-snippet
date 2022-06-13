@@ -1,6 +1,6 @@
 <snippet>
 	<content><![CDATA[
-template<class node> struct Segtree {$0
+template<class node> struct Lazytree {$0
 	int N, H; node *d, *t;
 	Segtree(int n) : N(n) {
 		d = new node[N];
