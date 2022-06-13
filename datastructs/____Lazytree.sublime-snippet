@@ -2,7 +2,7 @@
 	<content><![CDATA[
 template<class node> struct Lazytree {$0
 	int N, H; node *d, *t;
-	Segtree(int n) : N(n) {
+	Lazytree(int n) : N(n) {
 		d = new node[N];
 		t = new node[2*N];
 		H = 32 - __builtin_clz(2*N);
