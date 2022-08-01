@@ -17,7 +17,7 @@
 				["move", {"by": "lines", "forward": true}],
 				["move", {"by": "lines", "forward": true}],
 				["move", {"by": "lines", "forward": true}],
-				["move", {"by": "characters", "forward": true}],
+				["move", {"by": "words", "forward": true}],
 				["save", {"async": true}],
 			]
 		}
@@ -42,7 +42,7 @@
 				["move", {"by": "lines", "forward": true}],
 				["move", {"by": "lines", "forward": true}],
 				["move", {"by": "lines", "forward": true}],
-				["move", {"by": "characters", "forward": true}],
+				["move", {"by": "words", "forward": true}],
 				["save", {"async": true}],
 			]
 		}
@@ -70,6 +70,16 @@
 		"args": {
 			"commands": [
 				["unexpand_tabs", {"set_translate_tabs": true}],
+				["save", {"async": true}],
+			]
+		}
+	},
+	{
+		"keys": ["ctrl+alt+space"],
+		"command": "chain",
+		"args": {
+			"commands": [
+				["expand_tabs", {"set_translate_tabs": true}],
 				["save", {"async": true}],
 			]
 		}
