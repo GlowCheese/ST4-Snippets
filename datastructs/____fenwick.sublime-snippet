@@ -1,0 +1,10 @@
+<snippet>
+	<content><![CDATA[
+template<class T> struct fenwick { int n; vector<T> data; fenwick(int _n) : n(_n), data(_n) {} T sum(int l, int r) { return sum(r) - sum(l); } void add(int p, T x) { for (p++; p <= n; p += p & -p) data[p - 1] += x; } T sum(int r) { T ans = 0; for (; r > 0; r -= r & -r) ans += data[r - 1]; return ans; } fenwick(vector<T> d) : n(d.size()), data(d) { for (int i = 1; i <= n; i++) { if (i+(i&-i) <= n) data[i+(i&-i)-1] += data[i-1]; } } };
+
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>fenwick</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>

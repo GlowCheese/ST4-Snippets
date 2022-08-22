@@ -1,32 +1,10 @@
 <snippet>
 	<content><![CDATA[
-template<const int mod> struct Mint {$0
-	int value; static_assert(mod > 0);
+template<const int m> struct Mint { int v; static_assert(m > 0); Mint operator+() const { return *this; } Mint operator-() const { return Mint() - *this; } Mint& operator++() { if (v++; v == m) v = 0; return *this; } Mint& operator--() { if (v == 0) v = m; v--; return *this; } Mint(int64_t value = 0) : v(value) { if (v %= m; v < 0) v += m; } Mint inv() { int u = 1, v = 0; for (int x = v, y = m; x;) swap(u, v -= y/x * u), swap(x, y -= y/x * x); return v < 0 ? v + m : v; } Mint& operator/=(const Mint& other) { return *this *= other.inv(); } Mint operator++(int) { Mint result = *this; ++*this; return result; } Mint operator--(int) { Mint result = *this; --*this; return result; } friend bool operator==(const Mint &a, const Mint &b) { return a.v == b.v; } friend bool operator!=(const Mint &a, const Mint &b) { return a.v != b.v; } friend Mint operator+(const Mint& a, const Mint& b) { return Mint(a) += b; } friend Mint operator-(const Mint& a, const Mint& b) { return Mint(a) -= b; } friend Mint operator*(const Mint& a, const Mint& b) { return Mint(a) *= b; } friend Mint operator/(const Mint& a, const Mint& b) { return Mint(a) /= b; } friend ostream &operator<<(ostream &out, const Mint &a) { return out << a.v; } Mint& operator*=(const Mint& other) { v = uint64_t(v) * other.v % m; return *this; } friend istream &operator>>(istream &in, Mint &a) { ll v; cin >> v; return a = v, in; } Mint& operator-=(const Mint& other) { if (v -= other.v; v < 0) v += m; return *this; } Mint& operator+=(const Mint& other) { if (v += other.v; v >= m) v -= m; return *this; } }; template<int mod> void __print(Mint<mod> &x) { std::cerr << x; }
 
-	Mint(int64_t _value = 0) : value(_value % mod) {
-		if (value < 0) value += mod; }
-	Mint operator-() const { return -value; } 
-	explicit operator int() const { return value; }
-
-	friend ostream &operator<<(ostream &out,
-		const Mint &a) { return out << a.value; }
-	friend istream &operator>>(istream &in,
-		Mint &a) { ll v; cin >> v; return a = v, in; }
-	
-	friend Mint operator+(const Mint &a, const Mint &b) {
-		int ans = a.value + b.value;
-		return ans -= mod * (ans >= mod); }
-	friend Mint operator-(const Mint &a, const Mint &b) {
-		int ans = a.value - b.value;
-		return ans += mod * (ans < 0); }
-	friend Mint operator*(const Mint &a, const Mint &b) {
-		return 1ll * a.value * b.value; }
-	friend Mint operator/(const Mint &a, const Mint &b) {
-		return Minv(b.value, mod) * a.value; }
-};
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>modint</tabTrigger>
 	<!-- Optional: Set a scope to limit where the snippet will trigger -->
-	<!-- <scope>source.python</scope> -->
+	<scope>source.c++</scope>
 </snippet>
