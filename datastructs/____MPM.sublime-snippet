@@ -1,0 +1,163 @@
+<snippet>
+	<content><![CDATA[
+struct MPM {$0
+    static const int N = 1005;
+    using ll = long long;
+
+    struct Edge {
+        int u, v; ll cap, flow;
+        Edge(int _u, int _v, int _cap) :
+        u(_u), v(_v), cap(_cap), flow(0) {}
+    };
+
+    int n, m, s, t;
+    vector<int> adj[N];
+    vector<Edge> edges;
+
+    void add_edge(int u, int v, int cap) {
+        edges.emplace_back(u, v, cap);
+        edges.emplace_back(v, u, 0);
+        adj[u].push_back(m++);
+        adj[v].push_back(m++);
+    }
+
+    void reset(int _n) {
+        n = _n; edges.clear();
+        For (i, 1, n + 1) {
+            ex[i] = 0;
+            adj[i].clear();
+        }
+    }
+
+    MPM(int _n, int _s, int _t) : s(_s), t(_t) { reset(_n); }
+
+    int lv[N];
+    bool bfs() {
+        fill(lv, lv + n + 1, -1);
+
+        queue<int> q;
+        q.push(s); lv[s] = 0;
+        while (!q.empty()) {
+            int u = q.front(); q.pop();
+            for (int id : adj[u]) {
+                auto e = edges[id];
+                if (lv[e.v] != -1) continue;
+                if (e.cap == e.flow) continue;
+                lv[e.v] = lv[e.u] + 1; q.push(e.v);
+            }
+        }
+
+        return lv[t] != -1;
+    }
+
+    ll pin[N], pou[N];
+    vector<int> in[N], ou[N];
+    void initiate_graph() {
+        For (i, 1, n + 1) {
+            in[i].clear();
+            ou[i].clear();
+            pin[i] = pou[i] = 0;
+        }
+
+        For (id, 0, m) {
+            auto e = edges[id];
+            if (e.cap == e.flow) continue;
+            if (lv[e.u] + 1 == lv[e.v] && (lv[e.v] < lv[t] || e.v == t)) {
+                ou[e.u].push_back(id); pou[e.u] += e.cap - e.flow;
+                in[e.v].push_back(id); pin[e.v] += e.cap - e.flow;
+            }
+        }
+
+        pin[s] = pou[t] = e60;
+    }
+    ll pot(int u) { return min(pin[u], pou[u]); }
+
+    void remove_edge(vector<int> &edges, int edge_id) {
+        edges.erase(find(all(edges), edge_id));
+    }
+
+    void remove_node(int u) {
+        for (int id : ou[u]) {
+            auto e = edges[id];
+            remove_edge(in[e.v], id);
+            pin[e.v] -= e.cap - e.flow;
+        }
+        for (int id : in[u]) {
+            auto e = edges[id];
+            remove_edge(ou[e.u], id);
+            pou[e.u] -= e.cap - e.flow;
+        }
+        pin[u] = pou[u] = 0;
+        in[u].clear(); ou[u].clear();
+    }
+
+    ll ex[N];
+    void push(int s, int t, int f) {
+        queue<int> q;
+        q.push(s); ex[s] = f;
+        while (!q.empty()) {
+            int u = q.front(); q.pop();
+            if (u == t) break;
+
+            if (lv[s] < lv[t]) {
+                auto it = ou[u].begin();
+                while (ex[u] > 0) {
+                    auto &e = edges[*it]; int v = e.v;
+                    int pushed = min(ex[u], e.cap - e.flow);
+
+                    pou[u] -= pushed; pin[v] -= pushed;
+                    e.flow += pushed; edges[*it^1].flow -= pushed;
+                    if (e.cap == e.flow) {
+                        remove_edge(in[v], *it);
+                        ou[u].erase(it);
+                    }
+                    if (ex[v] == 0) q.push(v);
+                    ex[u] -= pushed; ex[v] += pushed;
+                }
+            } else {
+                auto it = in[u].begin();
+                while (ex[u] > 0) {
+                    auto &e = edges[*it]; int v = e.u;
+                    int pushed = min(ex[u], e.cap - e.flow);
+
+                    pin[u] -= pushed; pou[v] -= pushed;
+                    e.flow += pushed; edges[*it^1].flow -= pushed;
+                    if (e.cap == e.flow) {
+                        remove_edge(ou[v], *it);
+                        in[u].erase(it);
+                    }
+                    if (ex[v] == 0) q.push(v);
+                    ex[u] -= pushed; ex[v] += pushed;
+                }
+            }
+        }
+    }
+
+    ll flow() {
+        ll ans = 0;
+        while (true) {
+            if (!bfs()) break;
+            initiate_graph();
+
+            while (true) {
+                int u = -1;
+                For (i, 1, n + 1) {
+                    if (!pin[i] && !pou[i]) continue;
+                    if (u == -1 || pot(i) < pot(u)) u = i;
+                }
+                if (u == -1) break;
+
+                int f = pot(u);
+                push(u, t, f); ans += f;
+                push(u, s, f); remove_node(u);
+            }
+        }
+        return ans;
+    }
+};
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>MPM</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<scope>source.c++</scope>
+</snippet>
