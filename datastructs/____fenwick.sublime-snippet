@@ -41,6 +41,20 @@ struct fenwick {$0
         return upper_bound(sum - 1);
     }
 };
+/*
+usage:
+
+fenwick tree is 0-indexed
+
+fenwick(N): N nodes whose values are initialized with 0
+fenwick(V): initialize and calculate BIT for vector V
+
+add(p, x): v[p] += x
+sum(l, r) = sum of [l, r); sum(r) = sum(0, r)
+
+upper_bound(sum): minimum value of r -> sum(r) >  sum
+lower_bound(sum): minimum value of r -> sum(r) >= sum
+*/
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>fenwick</tabTrigger>

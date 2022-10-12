@@ -1,0 +1,49 @@
+<snippet>
+	<content><![CDATA[
+struct segtree {$0
+    using T = ll;
+    const T unit = T();
+    T f(T u, T v) { return max(u, v); }
+    // filling this first before using the tree
+
+    int n; vector<T> data;
+
+    segtree(int _n) : n(_n), data(2*_n, unit) {}
+    template<class T> segtree(vector<T> d) {
+        data.resize(2 * (n = d.size()));
+        copy(all(d), data.begin() + n);
+        for (int i = n - 1; i >= 0; i--) {
+            data[i] = f(data[i << 1], data[i << 1 | 1]);
+        }
+    }
+
+    void update(int p, int x) {
+        for (data[p += n] = x; p >>= 1; )
+            data[p] = f(data[p << 1], data[p << 1 | 1]);
+    }
+
+    T query(int l, int r) {
+        T ansL = unit, ansR = unit;
+        for (l += n, r += n + 1; l < r; ) {
+            if (l&1) ansL = f(ansL, data[l++]);
+            if (r&1) ansR = f(data[--r], ansR);
+        }
+        return f(ansL, ansR);
+    }
+};
+/* usage: Segment Tree
+
+segment tree is 0-indexed
+
+segtree(N): size of the array (size of tree is 2*N)
+segtree(V): assign V as the array of the tree
+
+update(p, x): set v[p] := x
+query(l, r): query on segment [l, r]
+*/
+]]></content>
+	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
+	<tabTrigger>segtree</tabTrigger>
+	<!-- Optional: Set a scope to limit where the snippet will trigger -->
+	<!-- <scope>source.python</scope> -->
+</snippet>

@@ -7,9 +7,9 @@ template<const int m> struct Mint {$0
     Mint& operator++() { if (v++; v == m) v = 0; return *this; }
     Mint& operator--() { if (v == 0) v = m; v--; return *this; }
     Mint(int64_t value = 0) : v(value) { if (v %= m; v < 0) v += m; }
-    Mint inv() { int u = 1, v = 0; for (int x = v, y = m; x;) swap(u,
-    v -= y/x * u), swap(x, y -= y/x * x); return v < 0 ? v + m : v; }
     Mint& operator/=(const Mint& other) { return *this *= other.inv(); }
+    Mint inv() const { int a = 1, b = 0; for (int x = v, y = m; x != 0; )
+    swap(a, b -= y/x * a), swap(x, y -= y/x * x); return b + (b<0) * m; }
     Mint operator++(int) { Mint result = *this; ++*this; return result; }
     Mint operator--(int) { Mint result = *this; --*this; return result; }
     friend bool operator==(const Mint &a, const Mint &b) { return a.v == b.v; }
