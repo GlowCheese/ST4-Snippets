@@ -41,8 +41,7 @@ struct fenwick {$0
         return upper_bound(sum - 1);
     }
 };
-/*
-usage:
+/* usage: Fenwick Tree
 
 fenwick tree is 0-indexed
 
