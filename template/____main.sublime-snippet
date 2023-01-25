@@ -7,28 +7,19 @@
 
 using namespace std;
 namespace {$0
-	// macros definitions
-	#define Gint Read<ll>()
-	#define Gstr Read<str>()
-	#define all(a)  (a).begin(),  (a).end()
-	#define rall(a) (a).rbegin(), (a).rend()
-	#define For(i, u, v) for (int i = (u), _n_ = (v); i < _n_; i++)
-	#define Rof(i, u, v) for (int i = (u), _n_ = (v); --i >= _n_; )
+    #define gint ([]() { ll  x; return cin >> x, x; }())
+    #define gstr ([]() { str x; return cin >> x, x; }())
+    #define rpt(i, u, v) for (ll i = (u), _n_ = (v); i < _n_; i++)
+    #define tpr(i, u, v) for (ll i = (u), _n_ = (v); --i >= _n_; )
 
-	// typedefs & constants
-	using chr = char;     using ll = long long;     using pll = pair<ll, ll>;
-	using str = string;   using ld = long double;   using pii = pair<int, int>;
-	template<class T> using MaxHeap = priority_queue<T, vector<T>,    less<T>>;
-	template<class T> using MinHeap = priority_queue<T, vector<T>, greater<T>>;
-	const ld eps = 0.01 * 0.01 * 0.01 * 0.01, pi = 3.1415926535897932384626433;
-	const ll e30 = 1ll << 30; const ll e60 = 1ll << 60; const ll md = 1e9 + 83;
+    using chr = char;     using ll = long long;     using pll = pair<ll, ll>;
+    using str = string;   using ld = long double;   using pii = pair<int, int>;
+    template<class T> using maxHeap = priority_queue<T, vector<T>,    less<T>>;
+    template<class T> using minHeap = priority_queue<T, vector<T>, greater<T>>;
 
-	// useful functions
-	template<class T> T Read() { T x; return cin >> x, x; }
-	template<class A, class B>
-	bool Maxz(A &a, B b) { return a < b && (a = b, true); }
-	template<class A, class B>
-	bool Minz(A &a, B b) { return b < a && (a = b, true); }
+    const ld eps = 0.00000001, pi = acos(-1); const ll e30 = 1 << 30, e60 = 1ll << 60;
+    template<class A, class B> bool chmax(A &a, B b) { return a < b && (a = b, true); }
+    template<class A, class B> bool chmin(A &a, B b) { return b < a && (a = b, true); }
 } // main template
 
 
@@ -42,9 +33,9 @@ int main() {
 	
 }
 
-// ------------------------------------------                    |\__/,|   (`\
-// | author: dlbm1302 | created: $DATE |                  _.|o o  |_   ) )
-// -----------------------------------------------------------(((---(((------------
+// --------------------------------------------                    |\__/,|   (`\
+// | author: GlowCheese | created: $DATE |                  _.|o o  |_   ) )
+// -------------------------------------------------------------(((---(((------------
 ]]></content>
 	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>cppT</tabTrigger>

@@ -6,7 +6,7 @@
 			"commands": [
 				["select_all"],
 				["left_delete"],
-				["insert_templ_three"],
+				["insert_mtt_templ"],
 				["expand_selection", {"to": "brackets"}],
 				["fold"],
 				["move", {"by": "lines", "forward": true}],
@@ -29,7 +29,7 @@
 			"commands": [
 				["select_all"],
 				["left_delete"],
-				["insert_templ_one"],
+				["insert_main_templ"],
 				["expand_selection", {"to": "brackets"}],
 				["fold"],
 				["move", {"by": "lines", "forward": true}],
@@ -46,23 +46,6 @@
 				["save", {"async": true}],
 			]
 		}
-	},
-	{
-		"keys": ["f6"], 
-		"command": "chain", 
-		"args": {
-			"commands": [
-				["select_all"],
-				["left_delete"],
-				["insert_templ_two"],
-				["show_at_center"],
-				["save", {"async": true}],
-			]
-		}
-	},
-	{
-		"keys": ["ctrl+shift+c"],
-		"command": "cmd",
 	},
 	{
 		"keys": ["ctrl+alt+t"],
