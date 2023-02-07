@@ -39,12 +39,12 @@ int main() {
 	rpt (tc, 0, gint) submain(tc);
 }
 
-// --------------------------------------------                    |\__/,|   (`\
-// | author: GlowCheese | created: $DATE |                  _.|o o  |_   ) )
-// -------------------------------------------------------------(((---(((------------
+// ----------------------------------------------
+// | author: GlowCheese  | created: $DATE  |
+//  ---------------------------------------------
+// | i hate everyone else in this world         |
+// | except you, the one who read this message  |
+// ----------------------------------------------
 ]]></content>
-	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
-	<tabTrigger>cppT</tabTrigger>
-	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<scope>source.c++</scope>
 </snippet>
