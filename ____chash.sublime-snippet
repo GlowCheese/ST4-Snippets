@@ -8,8 +8,6 @@ struct chash {$0
 	size_t operator()(uint64_t x) const { return _splitmix64_(x + FIXED_RANDOM); }
 }; // Custom Hash
 ]]></content>
-	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>chash</tabTrigger>
-	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<scope>source.c++</scope>
 </snippet>

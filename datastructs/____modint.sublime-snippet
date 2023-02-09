@@ -3,7 +3,7 @@
 template<const int m> struct Mint {$0
     int v; static_assert(m > 0);
     Mint operator+() const { return *this; }
-    friend void __print(Mint &x) { std::cerr << x; }
+    friend void __print(Mint &x) { cerr << x; }
     Mint operator-() const { return Mint() - *this; }
     Mint& operator++() { if (v++; v == m) v = 0; return *this; }
     Mint& operator--() { if (v == 0) v = m; v--; return *this; }
@@ -26,8 +26,6 @@ template<const int m> struct Mint {$0
     Mint& operator+=(const Mint& other) { if (v += other.v; v >= m) v -= m; return *this; }
 };
 ]]></content>
-    <!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
     <tabTrigger>modint</tabTrigger>
-    <!-- Optional: Set a scope to limit where the snippet will trigger -->
     <scope>source.c++</scope>
 </snippet>

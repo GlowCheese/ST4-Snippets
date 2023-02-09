@@ -2,13 +2,11 @@
 	<content><![CDATA[
 namespace {$0
 	using ll = long long;
-	mt19937_64 Rng(chrono::steady_clock::now().time_since_epoch().count());
-	static const ll FIXED_RANDOM = Rng(); // use this instead of rand()
-	ll Rand(ll a, ll b) { return uniform_int_distribution<ll>(a, b)(Rng); }
+	mt19937_64 rng(chrono::steady_clock::now().time_since_epoch().count());
+	static const ll FIXED_RANDOM = rng(); // use this instead of rand()
+	ll rand(ll a, ll b) { return uniform_int_distribution<ll>(a, b)(rng); }
 } // random number generators
 ]]></content>
-	<!-- Optional: Set a tabTrigger to define how to trigger the snippet -->
 	<tabTrigger>random</tabTrigger>
-	<!-- Optional: Set a scope to limit where the snippet will trigger -->
 	<scope>source.c++</scope>
 </snippet>
