@@ -17,7 +17,7 @@ struct segtree {$0
         }
     }
 
-    void update(int p, int x) {
+    void update(int p, T x) {
         for (data[p += n] = x; p >>= 1; )
             data[p] = f(data[p << 1], data[p << 1 | 1]);
     }
@@ -27,6 +27,7 @@ struct segtree {$0
         for (l += n, r += n + 1; l < r; ) {
             if (l&1) ansL = f(ansL, data[l++]);
             if (r&1) ansR = f(data[--r], ansR);
+            l >>= 1; r >>= 1;
         }
         return f(ansL, ansR);
     }
