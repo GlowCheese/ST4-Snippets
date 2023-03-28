@@ -11,7 +11,7 @@ struct segtree {$0
     segtree(int _n) : n(_n), data(2*_n, unit) {}
     template<class T> segtree(vector<T> d) {
         data.resize(2 * (n = d.size()));
-        copy(all(d), data.begin() + n);
+        copy(d.begin(), d.end(), data.begin() + n);
         for (int i = n - 1; i >= 0; i--) {
             data[i] = f(data[i << 1], data[i << 1 | 1]);
         }

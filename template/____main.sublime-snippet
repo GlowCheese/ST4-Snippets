@@ -30,7 +30,6 @@ const int mod = 1000000007;
 int main() {
 	cin.tie(nullptr) -> sync_with_stdio(false);
 	
-	
 }
 
 // --------------------------------------------
