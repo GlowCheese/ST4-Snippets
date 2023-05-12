@@ -1,5 +1,5 @@
 /**
- *    author:  Ngo Bao Nhu
+ *    author:  Le Thi Ngoc Thao
  *    created: $%D%$.$%M%$.$%Y%$ $%h%$:$%m%$:$%s%$       
 **/
 
