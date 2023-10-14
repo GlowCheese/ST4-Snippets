@@ -1,28 +1,5 @@
 [
 	{
-		"keys": ["f4"],
-		"command": "chain",
-		"args": {
-			"commands": [
-				["select_all"],
-				["left_delete"],
-				["insert_mtt_templ"],
-				["expand_selection", {"to": "brackets"}],
-				["fold"],
-				["move", {"by": "lines", "forward": true}],
-				["move", {"by": "lines", "forward": true}],
-				["move", {"by": "lines", "forward": true}],
-				["move", {"by": "lines", "forward": true}],
-				["move", {"by": "lines", "forward": true}],
-				["move", {"by": "lines", "forward": true}],
-				["move", {"by": "lines", "forward": true}],
-				["move", {"by": "lines", "forward": true}],
-				["move", {"by": "words", "forward": true}],
-				["save", {"async": true}],
-			]
-		}
-	},
-	{
 		"keys": ["f5"], 
 		"command": "chain", 
 		"args": {
@@ -42,8 +19,12 @@
 				["move", {"by": "lines", "forward": true}],
 				["move", {"by": "lines", "forward": true}],
 				["move", {"by": "lines", "forward": true}],
+				["move", {"by": "lines", "forward": true}],
+				["move", {"by": "lines", "forward": true}],
+				["move", {"by": "lines", "forward": true}],
+				["move", {"by": "lines", "forward": true}],
+				["move", {"by": "lines", "forward": true}],
 				["move", {"by": "words", "forward": true}],
-				["save", {"async": true}],
 			]
 		}
 	},

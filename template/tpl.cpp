@@ -1,9 +1,7 @@
-<snippet>
-	<content><![CDATA[
 #include <bits/stdc++.h>
 using namespace std;
 
-namespace {$0
+namespace {
     #define all(x) (x).begin(), (x).end()
     using str = string; using pii = pair<int, int>;
     using ll = long long; using pll = pair<ll, ll>;
@@ -32,13 +30,10 @@ const ll e30 = 1ll << 30, e60 = 1ll << 60;
 #endif
 
 int main() {
-	cin.tie(nullptr) -> sync_with_stdio(false);
-	
+    cin.tie(nullptr) -> sync_with_stdio(false);
+    
 }
 
 // --------------------------------------------
-// | author: GlowCheese | created: $DATE |
+// | author: GlowCheese | created: $%D%$.$%M%$.$%Y%$ |
 // --------------------------------------------
-]]></content>
-	<scope>source.c++</scope>
-</snippet>

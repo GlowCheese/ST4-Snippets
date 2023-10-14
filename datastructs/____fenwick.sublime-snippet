@@ -31,7 +31,7 @@ struct fenwick {$0
     int upper_bound(ll sum) {
         int ans = 0;
         for (int k = 30; --k >= 0;) {
-            if ((ans | (1 << k)) >= n) continue;
+            if ((ans | (1 << k)) > n) continue;
             if (sum >= data[(ans | (1 << k)) - 1])
                 sum -= data[(ans |= 1 << k) - 1];
         }
@@ -51,8 +51,8 @@ fenwick(V): initialize and calculate BIT for vector V
 add(p, x): v[p] += x
 sum(l, r) = sum of [l, r); sum(r) = sum(0, r)
 
-upper_bound(sum): minimum value of r -> sum(r) >  sum
-lower_bound(sum): minimum value of r -> sum(r) >= sum
+upper_bound(sum): minimum value of r -> sum(r+1) >  sum
+lower_bound(sum): minimum value of r -> sum(r+1) >= sum
 */
 ]]></content>
 	<tabTrigger>fenwick</tabTrigger>
