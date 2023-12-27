@@ -7,7 +7,7 @@ template<const int m> struct Mint {$0
     Mint operator-() const { return Mint() - *this; }
     Mint& operator++() { if (v++; v == m) v = 0; return *this; }
     Mint& operator--() { if (v == 0) v = m; v--; return *this; }
-    Mint(int64_t value = 0) : v(value) { if (v %= m; v < 0) v += m; }
+    Mint(int64_t value = 0) : v(value % m) { if (v < 0) v += m; }
     Mint& operator/=(const Mint& other) { return *this *= other.inv(); }
     Mint inv() const { int a = 1, b = 0; for (int x = v, y = m; x != 0; )
     swap(a, b -= y/x * a), swap(x, y -= y/x * x); return b + (b<0) * m; }
